@@ -24,7 +24,7 @@ function getJson()
                     },
                     "link_site_oficial": "https://www.picodojaragua.com.br/trilhas-do-pico-do-jaragua/ ",
                     "imagens": [
-                        "/IMG/FOTOS/0/0.jpg"
+                        "./IMG/FOTOS/0/0.jpg"
                     ]
                 },
                 {
@@ -46,7 +46,7 @@ function getJson()
                     },
                     "link_site_oficial": "https://www.parquevillalobos.net/",
                     "imagens": [
-                        "/IMG/FOTOS/1/0.jpg"
+                        "./IMG/FOTOS/1/0.jpg"
                     ]
                 },
                 {
@@ -68,7 +68,7 @@ function getJson()
                     },
                     "link_site_oficial": "https://www.parquedoibirapuera.org/",
                     "imagens": [
-                        "/IMG/FOTOS/2/0.jpg"
+                        "./IMG/FOTOS/2/0.jpg"
                     ]
                 },
                 {
@@ -90,7 +90,7 @@ function getJson()
                     },
                     "link_site_oficial": "https://bauecoturismo.com.br/",
                     "imagens": [
-                        "/IMG/FOTOS/3/0.jpg"
+                        "./IMG/FOTOS/3/0.jpg"
                     ]
                 },
                 {
@@ -112,7 +112,7 @@ function getJson()
                     },
                     "link_site_oficial": "https://descubraoguaruja.com.br/praias-de-bertioga-sp/",
                     "imagens": [
-                        "/IMG/FOTOS/4/0.jpg"
+                        "./IMG/FOTOS/4/0.jpg"
                     ]
                 },
                 {
@@ -134,7 +134,7 @@ function getJson()
                     },
                     "link_site_oficial": "https://descubraoguaruja.com.br/praias-de-bertioga-sp/",
                     "imagens": [
-                        "/IMG/FOTOS/5/0.jpg"
+                        "./IMG/FOTOS/5/0.jpg"
                     ]
                 },
                 {
@@ -156,7 +156,7 @@ function getJson()
                     },
                     "link_site_oficial": "https://pinacoteca.org.br/",
                     "imagens": [
-                        "/IMG/FOTOS/6/0.jpg"
+                        "./IMG/FOTOS/6/0.jpg"
                     ]
                 },
                 {
@@ -178,7 +178,7 @@ function getJson()
                     },
                     "link_site_oficial": "https://masp.org.br/",
                     "imagens": [
-                        "/IMG/FOTOS/7/0.jpg"
+                        "./IMG/FOTOS/7/0.jpg"
                     ]
                 }
             ]
