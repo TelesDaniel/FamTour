@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 :root {
     --white: #ffffff;
@@ -18,7 +18,7 @@ header {
 
 body {
     height:100%;
-    background-image: url("../IMG/fundo4.svg"),url("../IMG/fundo3.svg"), url("../IMG/fundo2.svg"), url("../IMG/g10-2.svg") !important;
+    background-image: url(../IMG/fundo4.svg),url(../IMG/fundo3.svg), url(../IMG/fundo2.svg), url(../IMG/g10-2.svg) !important;
     
     background-repeat: no-repeat,no-repeat, no-repeat, repeat-y;
     background-position: left,left, right,center;
