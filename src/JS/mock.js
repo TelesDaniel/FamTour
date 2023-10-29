@@ -184,3 +184,38 @@ function getJson()
             ]
         }
 };
+
+
+function getUfJson() {
+    return {
+        "UF": [
+            {"nome": "Acre", "sigla": "AC", "ativo": false},
+            {"nome": "Alagoas", "sigla": "AL", "ativo": false},
+            {"nome": "Amapá", "sigla": "AP", "ativo": false},
+            {"nome": "Amazonas", "sigla": "AM", "ativo": false},
+            {"nome": "Bahia", "sigla": "BA","ativo": false},
+            {"nome": "Ceará", "sigla": "CE","ativo": false},
+            {"nome": "Distrito Federal", "sigla": "DF","ativo": false},
+            {"nome": "Espírito Santo", "sigla": "ES","ativo": false},
+            {"nome": "Goiás", "sigla": "GO","ativo": false},
+            {"nome": "Maranhão", "sigla": "MA","ativo": false},
+            {"nome": "Mato Grosso", "sigla": "MT","ativo": false},
+            {"nome": "Mato Grosso do Sul", "sigla": "MS","ativo": false},
+            {"nome": "Minas Gerais", "sigla": "MG","ativo": false},
+            {"nome": "Pará", "sigla": "PA","ativo": false},
+            {"nome": "Paraíba", "sigla": "PB","ativo": false},
+            {"nome": "Paraná", "sigla": "PR","ativo": false},
+            {"nome": "Pernambuco", "sigla": "PE","ativo": false},
+            {"nome": "Piauí", "sigla": "PI","ativo": false},
+            {"nome": "Rio de Janeiro", "sigla": "RJ","ativo": false},
+            {"nome": "Rio Grande do Norte", "sigla": "RN","ativo": false},
+            {"nome": "Rio Grande do Sul", "sigla": "RS","ativo": false},
+            {"nome": "Rondônia", "sigla": "RO","ativo": false},
+            {"nome": "Roraima", "sigla": "RR","ativo": false},
+            {"nome": "Santa Catarina", "sigla": "SC","ativo": false},
+            {"nome": "São Paulo", "sigla": "SP","ativo": true},
+            {"nome": "Sergipe", "sigla": "SE","ativo": false},
+            {"nome": "Tocantins", "sigla": "TO", "ativo": false}
+        ]
+    }
+}

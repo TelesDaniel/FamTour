@@ -17,32 +17,30 @@ header {
 }
 
 body {
-    height:100%;
-    background-image: url(../IMG/fundo4.svg),url(../IMG/fundo3.svg), url(../IMG/fundo2.svg), url(../IMG/g10-2.svg) !important;
-    
-    background-repeat: no-repeat,no-repeat, no-repeat, repeat-y;
-    background-position: left,left, right,center;
-    background-position-y: bottom,top, 50vh, center;
-    background-size: auto,auto, auto, cover;
-}
+    height: 100%;
+    background-image: url(../IMG/fundo4.svg), url(../IMG/fundo3.svg), url(../IMG/fundo2.svg), url(../IMG/g10-2.svg) !important;
 
+    background-repeat: no-repeat, no-repeat, no-repeat, repeat-y;
+    background-position: left, left, right, center;
+    background-position-y: bottom, top, 70vh, center;
+    background-size: auto, auto, auto, cover;
+}
 
 #search-bar-container {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 20vh;
 }
 
-#search-bar  {
+#search-bar {
     background-color: white;
     border-radius: 5px;
     padding: 5px;
     box-shadow: 0px 2px 8px 0px rgba(26, 26, 26, 0.16);
 }
 
-#search-bar  div {
+#search-bar div {
     display: grid;
     width: 500px;
 }
@@ -54,11 +52,11 @@ body {
     width: 100%;
 }
 
-#search-bar input:focus{
+#search-bar input:focus {
     outline: none;
 }
 
-#search-bar  button {
+#search-bar button {
     border: none;
     background-color: #790EA6;
     color: white;
@@ -69,6 +67,14 @@ body {
     width: 100%;
     box-shadow: 0px 2px 8px 0px rgba(26, 26, 26, 0.16);
     font-size: 12px;
+}
+
+#search-map-container {
+    margin-top: 10vh;
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 #logo-container {
@@ -111,7 +117,6 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 5vh;
 }
 
 div.cards {
@@ -120,7 +125,7 @@ div.cards {
     text-align: center;
 
     background-color: white;
-    border-radius: 5px;
+
     box-shadow: 0px 2px 8px 0px rgba(26, 26, 26, 0.16);
 }
 
@@ -136,7 +141,7 @@ div.card {
     width: 300px;
     z-index: 1;
 
-    border-radius: 5px;
+
 }
 
 div.card img {
@@ -234,26 +239,58 @@ div.card div.flap2 {
 
 .contact-section {
     padding-top: 5rem;
-  }
+}
 
-  .contact-section .social {
+.contact-section .social {
     margin-top: 5rem;
-  }
-  .contact-section .social a {
+}
+
+.contact-section .social a {
     text-align: center;
     height: 3rem;
     width: 3rem;
     border-radius: 100%;
     line-height: 3rem;
     color: black;
-  }
-  .contact-section .social a:hover {
-    color: black;
-  }
-  .contact-section .social a:active {
-    color: #fff;
-  }
+}
 
-  .footer {
+.contact-section .social a:hover {
+    color: black;
+}
+
+.contact-section .social a:active {
+    color: #fff;
+}
+
+.footer {
     padding: 5rem 0;
-  }
+}
+
+#loading {
+    animation: animName 2s linear infinite;
+    width: 90px;
+    height: 90px;
+    background-image: url(../IMG/logo.png);
+    margin: 20px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90px;
+
+    display:inline-block;
+}
+
+@keyframes animName {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.modal-content {
+    border: none !important;
+    background-color: #fff0 !important;
+}

@@ -45,7 +45,9 @@ function searchInData(searchText, orderBy) {
     return result;
 }
 
-
+function searchPage(searchText) {
+    location.href = './pages/atividades/list/search_result.html' + '?search=' + searchText
+}
 
 function mountCardByFilter(searchText, orderBy) {
 
@@ -55,6 +57,12 @@ function mountCardByFilter(searchText, orderBy) {
     }
 
     let atividades = searchInData(searchText, orderBy)
+    if(atividades.length <= 0){
+        notfound = document.createElement("h3");
+        notfound.innerText = "404 - Nenhum resultado encontrado ;("
+        cards.appendChild(notfound)
+    }
+
     for(i in atividades){
         mountCard(atividades[i])
     }
@@ -80,20 +88,9 @@ function mountCard(atividade) {
 
     let card_title = document.createElement("div");
     card_title.classList.add('card-title');
-    let a_toggle_info = document.createElement("a");
-    a_toggle_info.href = '#'
-    a_toggle_info.classList.add('toggle-info');
-    a_toggle_info.classList.add('btn');
 
-    let left = document.createElement("span");
-    left.classList.add('left');
-    let right = document.createElement("span");
-    right.classList.add('right');
-    a_toggle_info.appendChild(left)
-    a_toggle_info.appendChild(right)
     let title = document.createElement("h2");
     title.innerText= atividade['titulo']
-    card_title.appendChild(a_toggle_info)
     card_title.appendChild(title)
     card.appendChild(card_title)
 
@@ -121,3 +118,4 @@ function mountCard(atividade) {
     cards.appendChild(card)
    
 }
+
