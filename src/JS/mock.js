@@ -25,7 +25,12 @@ function getJson()
                     "link_site_oficial": "https://www.picodojaragua.com.br/trilhas-do-pico-do-jaragua/ ",
                     "imagens": [
                         "./IMG/FOTOS/0/0.jpg"
-                    ]
+                    ],
+                    "avaliacao": {
+                        "estrelas": 4,
+                        "comentarios" : []
+                    },
+                    "nivel": 2
                 },
                 {
                     "id": 1,
@@ -47,7 +52,12 @@ function getJson()
                     "link_site_oficial": "https://www.parquevillalobos.net/",
                     "imagens": [
                         "./IMG/FOTOS/1/0.jpg"
-                    ]
+                    ],
+                    "avaliacao": {
+                        "estrelas": 5,
+                        "comentarios" : []
+                    },
+                    "nivel": 1
                 },
                 {
                     "id": 2,
@@ -69,7 +79,12 @@ function getJson()
                     "link_site_oficial": "https://www.parquedoibirapuera.org/",
                     "imagens": [
                         "./IMG/FOTOS/2/0.jpg"
-                    ]
+                    ],
+                    "avaliacao": {
+                        "estrelas": 5,
+                        "comentarios" : []
+                    },
+                    "nivel": 1
                 },
                 {
                     "id": 3,
@@ -91,7 +106,12 @@ function getJson()
                     "link_site_oficial": "https://bauecoturismo.com.br/",
                     "imagens": [
                         "./IMG/FOTOS/3/0.jpg"
-                    ]
+                    ],
+                    "avaliacao": {
+                        "estrelas": 3,
+                        "comentarios" : []
+                    },
+                    "nivel": 3
                 },
                 {
                     "id": 4,
@@ -113,7 +133,12 @@ function getJson()
                     "link_site_oficial": "https://descubraoguaruja.com.br/praias-de-bertioga-sp/",
                     "imagens": [
                         "./IMG/FOTOS/4/0.jpg"
-                    ]
+                    ],
+                    "avaliacao": {
+                        "estrelas": 4,
+                        "comentarios" : []
+                    },
+                    "nivel": 1
                 },
                 {
                     "id": 5,
@@ -135,7 +160,12 @@ function getJson()
                     "link_site_oficial": "https://descubraoguaruja.com.br/praias-de-bertioga-sp/",
                     "imagens": [
                         "./IMG/FOTOS/5/0.jpg"
-                    ]
+                    ],
+                    "avaliacao": {
+                        "estrelas": 5,
+                        "comentarios" : []
+                    },
+                    "nivel": 1
                 },
                 {
                     "id": 6,
@@ -157,11 +187,16 @@ function getJson()
                     "link_site_oficial": "https://pinacoteca.org.br/",
                     "imagens": [
                         "./IMG/FOTOS/6/0.jpg"
-                    ]
+                    ],
+                    "avaliacao": {
+                        "estrelas": 5,
+                        "comentarios" : []
+                    },
+                    "nivel": 0
                 },
                 {
                     "id": 7,
-                    "titulo": "Museu de Arte de S\u00e3o Paulo Assis Chateaubriand (MASP)",
+                    "titulo": "MASP",
                     "descricao": "Museu de Arte de S\u00e3o Paulo Assis Chateaubriand \u00e9 um centro cultural e museu de arte brasileiro fundado em 1947 pelo jornalista paraibano Assis Chateaubriand. Entre os anos de 1947 e 1990, o cr\u00edtico e marchand italiano Pietro Bardi assumiu a dire\u00e7\u00e3o do MASP a convite de Chateaubriand. ",
                     "preco": "50",
                     "localizacao": "-23.5669113,-46.6588347,16",
@@ -179,7 +214,12 @@ function getJson()
                     "link_site_oficial": "https://masp.org.br/",
                     "imagens": [
                         "./IMG/FOTOS/7/0.jpg"
-                    ]
+                    ],
+                    "avaliacao": {
+                        "estrelas": 5,
+                        "comentarios" : []
+                    },
+                    "nivel": 0
                 }
             ]
         }

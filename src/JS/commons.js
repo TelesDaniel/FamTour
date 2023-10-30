@@ -63,13 +63,15 @@ function mountCardByFilter(searchText, orderBy) {
         cards.appendChild(notfound)
     }
 
+    let z = atividades.length;
     for(i in atividades){
-        mountCard(atividades[i])
+        mountCard(atividades[i], z)
+        z--
     }
 }
 
 
-function mountCard(atividade) {
+function mountCard(atividade, index) {
 
     cards = document.getElementById('cards-container');
     let card = document.createElement("div");
@@ -91,31 +93,81 @@ function mountCard(atividade) {
 
     let title = document.createElement("h2");
     title.innerText= atividade['titulo']
+
+    let info_div = document.createElement("div");
+    info_div.classList.add('info-div');
+
+    let preco = document.createElement("span");
+    let precoValue = "Gratuito"
+    preco.classList.add('info-child');
+
+    if(atividade["preco"] > 0)
+        precoValue = "R$ " + atividade["preco"]
+
+    preco.innerText= precoValue
+    
+    info_div.appendChild(preco)
+
+    let stars = document.createElement("div");
+    stars.classList.add('info-child');
+
+    let i = 1
+    while(i <= 5) {
+        let span = document.createElement("span");
+        span.classList.add('fa');
+        span.classList.add('fa-star');
+
+        if(i <= atividade['avaliacao']['estrelas'])
+            span.classList.add('checked');
+
+        stars.appendChild(span)
+
+        i++
+    }
+
+    info_div.appendChild(stars)
+
+    let nivel = document.createElement("div");
+    nivel.classList.add('tip-div');
+    let tip = document.createElement("span");
+    tip.classList.add('tip');
+
+    if(atividade['nivel'] == 3)
+        tip.innerText = "Atividade de muito esforço físico! Recomendado ter experiência. "
+
+    if(atividade['nivel'] == 2)
+        tip.innerText = "Atividade de médio esforço físico! "
+
+    if(atividade['nivel'] == 1)
+        tip.innerText = "Atividade de baixo esforço físico! "
+
+    if(atividade['nivel'] == 0)
+        tip.innerText = "Atividade sem esforço físico! "
+
+    nivel.appendChild(tip)
+    
+    i = 1
+    while(i <= 3) {
+        let span = document.createElement("span");
+        span.classList.add('fa');
+        span.classList.add('fa-bolt');
+
+        if(i <= atividade['nivel'])
+            span.classList.add('checked');
+
+        nivel.appendChild(span)
+
+        i++
+    }
+
+    info_div.appendChild(nivel)
+
     card_title.appendChild(title)
+    card_title.appendChild(info_div)
+
     card.appendChild(card_title)
-
-    let card_flap = document.createElement("div");
-    card_flap.classList.add('card-flap');
-    card_flap.classList.add('flap1');
-
-    let card_desc = document.createElement("div");
-    card_desc.classList.add('card-description');
-    card_desc.innerText = atividade['descricao']
-
-    let read_more_card = document.createElement("div");
-    read_more_card.classList.add('card-flap');
-    read_more_card.classList.add('flap2');
-
-    let card_action = document.createElement("div");
-    card_action.classList.add('card-actions');
-
-    read_more_card.appendChild(card_action)
-
-    card_flap.appendChild(card_desc)
-    card_flap.appendChild(read_more_card)
-    card.appendChild(card_flap)
+    card.style = "z-index:" + index
 
     cards.appendChild(card)
-   
 }
 

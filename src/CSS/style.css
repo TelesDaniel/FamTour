@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 :root {
+    color-scheme: only light;
     --white: #ffffff;
     --lightBG: #dce1df;
     --salmon: #ff6666;
@@ -139,9 +140,6 @@ div.card {
     text-align: left;
     transition: all 0.3s 0s ease-in;
     width: 300px;
-    z-index: 1;
-
-
 }
 
 div.card img {
@@ -162,43 +160,27 @@ div.card div.card-title {
     z-index: 0;
 }
 
-div.card div.card-title a.toggle-info {
-    border-radius: 32px;
-    height: 32px;
-    padding: 0;
-    position: absolute;
-    right: 15px;
-    top: 10px;
-    width: 32px;
-}
-
-div.card div.card-title span {
-    background: var(--white);
-    display: block;
-    height: 2px;
-    position: absolute;
-    top: 16px;
-    transition: all 0.15s 0s ease-out;
-    width: 12px;
-}
-
-div.card div.card-title span.left {
-    right: 14px;
-    transform: rotate(45deg);
-}
-
-div.card div.card-title span.right {
-    left: 14px;
-    transform: rotate(-45deg);
-}
-
-
 div.card h2 {
     font-size: 24px;
     font-weight: 700;
     letter-spacing: -0.05em;
     margin: 0;
     padding: 0;
+    text-overflow: ellipsis;
+}
+
+div.card p {
+    font-size: 10px;
+    letter-spacing: -0.05em;
+    margin: 0;
+    padding: 0;
+    text-overflow: ellipsis;
+    width: 270px;
+
+    white-space: nowrap;
+    overflow: hidden;
+
+    color: gray;
 }
 
 div.card h2 small {
@@ -208,32 +190,8 @@ div.card h2 small {
     letter-spacing: -0.025em;
 }
 
-div.card div.card-description {
-    font-size: 14px;
-}
-
-div.card div.card-actions {
-    box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0.075);
-    padding: 10px 15px 20px;
-    text-align: center;
-}
-
-div.card div.card-flap {
-    background: darken(var(--white), 15);
-    position: absolute;
-    width: 100%;
-    transform-origin: top;
-    transform: rotateX(-90deg);
-}
-
-div.card div.flap1 {
-    transition: all 0.3s 0.3s ease-out;
-    z-index: -1;
-}
-
-div.card div.flap2 {
-    transition: all 0.3s 0s ease-out;
-    z-index: -2;
+div.card .checked {
+    color: #790EA6;
 }
 
 
@@ -293,4 +251,44 @@ div.card div.flap2 {
 .modal-content {
     border: none !important;
     background-color: #fff0 !important;
+}
+
+.info-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.info-child {
+    flex: 1
+}
+
+.info-div .tip {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 110%;
+}
+  
+.info-div .tip::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+}
+
+.tip-div:hover .tip {
+    visibility: visible;
 }
