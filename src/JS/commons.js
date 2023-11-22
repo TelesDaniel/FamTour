@@ -76,6 +76,9 @@ function mountCard(atividade, index) {
     cards = document.getElementById('cards-container');
     let card = document.createElement("div");
     card.classList.add('card');
+    card.addEventListener("click", () => {
+        location.href = './pages/atividades/details.html' + '?id=' + atividade['id']
+    }, false); 
 
     let card_holder = document.createElement("div");
     card_holder.classList.add('card__image-holder');
@@ -171,3 +174,108 @@ function mountCard(atividade, index) {
     cards.appendChild(card)
 }
 
+function closerActivities(id, km) {
+    const values = getJson();
+
+    let atividade = values["atividades"].filter((atividade) => { 
+        if (atividade['id'] == id)
+            return atividade
+    })
+
+    if(atividade.length <= 0)
+        return;
+
+    atividade = atividade[0]
+    let coodernada1 = atividade['localizacao']
+    
+    let closer = values["atividades"].filter((at) => { 
+        if (at['id'] != id){
+            let coordenada2 = at['localizacao']
+            
+            var cc = convertToDMS(coodernada1[0]-coordenada2[0])
+            var co1c = [cc[0] * 60, cc[1] * 1, cc[2] / 60]
+            var cateto1 = co1c[0] + co1c[1] + co1c[2]
+            
+            cc = convertToDMS(coodernada1[1]-coordenada2[1])
+
+            var co2c = [cc[0] * 60, cc[1] * 1, cc[2] / 60]
+            var cateto2 = co2c[0] + co2c[1] + co2c[2]
+            var res = Math.sqrt(Math.pow(cateto1, 2) + Math.pow(cateto2, 2))
+
+            console.log(at['id'])
+            if(res < km)
+                return at
+        } 
+    })
+
+    return closer
+}
+
+function convertToDMS(cood){
+    var hour = Math.round(cood)
+    var min = Math.round((cood-hour)*100)
+    var seg = Math.round((Math.round((cood-hour) * 100)-((cood-hour)*100))/100*3600)
+  
+    if(hour<0)hour=hour*-1
+    if(min<0)min=min*-1
+    if(seg<0)seg=seg*-1
+    
+    return [hour, min, seg]
+  }
+
+
+function mountCloserSearch(id) {
+    closer = closerActivities(id, 10) 
+
+    cards = document.getElementById('cards-container');
+    while (cards.firstChild) {
+        cards.removeChild(cards.lastChild);
+    }
+
+    if(closer.length <= 0){
+        notfound = document.createElement("h3");
+        notfound.innerText = "Nenhum resultado encontrado"
+        cards.appendChild(notfound)
+    }
+
+    let title = document.createElement("h2");
+    title.innerText = "Atividades próximas (10km):"
+    document.getElementById('cards-container').appendChild(document.createElement("br"))
+    document.getElementById('cards-container').appendChild(title)
+
+    let z = closer.length;
+    for(i in closer){
+        mountCard(closer[i], z)
+        z--
+    }
+
+}
+  
+async function mountDetailPage(id) {
+    let name = document.getElementById('detail-name');
+    let img =  document.getElementById('detail-img');
+    let desc = document.getElementById('detail-description-span');
+
+    const values = getJson();
+
+    //filtrando os dados
+    let result = values["atividades"].filter((atividade) => {
+
+        if(id == atividade["id"])
+            return atividade
+    });
+
+    if(result.length > 0)
+        result = result[0]
+
+    name.innerText = result["titulo"]
+    img.src = result["imagens"][0]
+    desc.innerText = result["descricao"]
+
+    const { Map } = await google.maps.importLibrary("maps");
+
+    map = new Map(document.getElementById("map"), {
+        center: { lat: Number(result["localizacao"][0]), lng: Number(result["localizacao"][1])},
+        zoom: 16,
+    });
+}
